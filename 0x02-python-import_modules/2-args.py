@@ -4,7 +4,7 @@ import sys
 
 def main():
     leng = len(sys.argv)
-    print("{:d}: argument{}".format(leng - 1, "." if leng == 1 else
+    print("{:d} argument{}".format(leng - 1, "s." if leng == 1 else
                                     (":" if leng == 2 else "s:")))
     a = 1
     for i in sys.argv[1:]:
