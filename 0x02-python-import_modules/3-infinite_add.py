@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 from sys import argv
 
+
 def main():
     add = 0
     for i argv[1:]:
