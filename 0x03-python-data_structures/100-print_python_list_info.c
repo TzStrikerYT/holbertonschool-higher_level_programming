@@ -3,9 +3,8 @@
 #include <stdlib.h>
 
 /**
- *
-  *
- *
+ * print_python_list_info - prints info of python
+ * @p: object in python
  *
  */
 
