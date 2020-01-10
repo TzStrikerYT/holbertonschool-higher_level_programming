@@ -31,7 +31,6 @@ class Square:
         """ area of square :v """
         return self.__size ** 2
 
-
     def my_print(self):
         """ prints a square of # """
         for i in range(self.__size):
