@@ -3,8 +3,19 @@ class Square:
     """ Square class """
     def __init__(self, size=0, position=(0, 0)):
         """ size of the square and position """
-        self.__size = size
-        self.__position = position
+        if type(size) != int:
+            raise TypeError("size must be an integer")
+        if size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = size
+
+        if (type(position[0]) != int or type(position[1]) != int or
+            type(position) != tuple or len(position) != 2 or
+                position[0] < 0 or position[1] < 0):
+            raise TypeError('position must be a tuple of 2 positive integers')
+        else:
+            self.__position = position
 
     """ intercept the write, read and delete of the attributes """
     @property
