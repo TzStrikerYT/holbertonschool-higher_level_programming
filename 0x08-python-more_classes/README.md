@@ -1,0 +1,1 @@
+In this project i study more classes and objects in python
