@@ -1,0 +1,46 @@
+>>> add_integer = __import__("0-add_integer").add_integer
+
+# float + int
+>>> add_integer(8.0, 5)
+13
+
+# string + int
+>>> add_integer('wilson', 6)
+Traceback (most recent call last):
+	  	  ...
+TypeError: a must be an integer
+
+# int + string
+>>> add_integer(6, 'Mchael')
+Traceback (most recent call last):
+	  	  ...
+TypeError: b must be an integer
+
+# large int
+>>> add_integer(999999999999, 1)
+1000000000000
+
+# a and b = None
+>>> add_integer(None, None)
+Traceback (most recent call last):
+	  	  ...
+TypeError: a must be an integer
+
+# Boolean + int
+>>> add_integer(True, 45)
+46
+
+>>> add_integer(False, True)
+1
+
+# no arguments
+>>> add_integer()
+Traceback (most recent call last):
+	  	  ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
+# more arguments
+>>> add_integer(6, 2, "well hello there")
+Traceback (most recent call last):
+	  	  ...
+TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
