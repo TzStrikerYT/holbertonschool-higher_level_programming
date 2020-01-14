@@ -1,0 +1,55 @@
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+# define the matrix
+>>> matrix = [[1, 2, 3], [4, 5, 6]]
+
+# divide by 3
+>>> print(matrix_divided(matrix, 3))
+[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+# divid by 1.3
+>>> print(matrix_divided(matrix, 1.3))
+[[0.77, 1.54, 2.31], [3.08, 3.85, 4.62]]
+
+# no list of integers
+>>> print(matrix_divided([[4, 'hi', 8], ['hi', 'h', 'i']], 1))
+Traceback (most recent call last):
+	  	  ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+# missing one arg
+>>> print(matrix_divided(matrix))
+Traceback (most recent call last):
+	  	  ...
+TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+# missing args
+>>> print(matrix_divided())
+Traceback (most recent call last):
+	  	  ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+# divide by float(inf)
+>>> print(matrix_divided([[9, 8, 7], [99, 88, 77]], float('inf')))
+[[0.0, 0.0, 0.0], [0.0, 0.0, 0.0]]
+
+# divide by "gabi"
+>>> print(matrix_divided(matrix, "gabi"))
+Traceback (most recent call last):
+	  	  ...
+TypeError: div must be a number
+
+# divide by 0
+>>> print(matrix_divided(matrix, 0))
+Traceback (most recent call last):
+	  	  ...
+ZeroDivisionError: division by zero
+
+#change the matrix
+>>> matrix = [[1, 2, 3], [4, 6]]
+
+#error in asymettrical matrix
+>>> print(matrix_divided(matrix, 2))
+Traceback (most recent call last):
+	  	  ...
+TypeError: Each row of the matrix must have the same size
