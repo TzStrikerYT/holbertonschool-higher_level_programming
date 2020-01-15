@@ -53,6 +53,9 @@ class Rectangle:
         """ string representation of a rectangle """
         string = ''
 
+        if self.__height == 0 or self.__width == 0:
+            return string
+
         if self.__width != 0 or self.__height != 0:
             for i in range(self.__height):
                 string += str("#" * self.__width) + "\n"
