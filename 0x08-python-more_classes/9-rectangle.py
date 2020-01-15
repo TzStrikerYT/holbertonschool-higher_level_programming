@@ -6,8 +6,21 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ init atributes of the object rectangle """
-        self.height = height
-        self.width = width
+
+        if type(height) != int:
+            raise TypeError("height must be an integer")
+        if height < 0:
+            raise ValueError("height must be >= 0")
+        else:
+            self.height = height
+
+        if type(height) != int:
+            raise TypeError("width must be an integer")
+        if height < 0:
+            raise ValueError("width must be >= 0")
+        else:
+            self.width = width
+
         Rectangle.number_of_instances += 1
 
     @property
@@ -53,24 +66,6 @@ class Rectangle:
 
         return per
 
-    def __str__(self):
-        """ string representation of a rectangle with print symbol"""
-        string = ''
-
-        if self.__width != 0 or self.__height != 0:
-            for i in range(self.__height):
-                string += str(self.print_symbol * self.__width) + "\n"
-            return string[:-1]
-
-    def __repr__(self):
-        """ string reoresentation of a rectangle """
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-
-    def __del__(self):
-        """ print message and delete the instance """
-        Rectangle.number_of_instances -= 1
-        return print("Bye rectangle...")
-
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """ returns the bigger rectangle or if both are equal"""
@@ -85,3 +80,22 @@ class Rectangle:
     def square(cls, size=0):
         """ return a square of length x width both """
         return cls(size, size)
+
+    def __str__(self):
+        """ string representation of a rectangle with print symbol"""
+        string = ''
+
+        if self.__width != 0 or self.__height != 0:
+            for i in range(self.__height):
+                string += str(self.print_symbol * self.__width) + "\n"
+            return string[:-1]
+
+        return print("Bye rectangle...")
+
+    def __repr__(self):
+        """ string reoresentation of a rectangle """
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """ print message and delete the instance """
+        Rectangle.number_of_instances -= 1
