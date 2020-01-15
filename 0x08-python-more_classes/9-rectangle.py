@@ -6,6 +6,7 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """ init atributes of the object rectangle """
+
         self.width = width
         self.height = height
         Rectangle.number_of_instances += 1
@@ -53,7 +54,24 @@ class Rectangle:
 
         return per
 
-    @staticmethod
+    def __str__(self):
+        """ string representation of a rectangle with print symbol"""
+        string = ''
+
+        if self.__width != 0 or self.__height != 0:
+            for i in range(self.__height):
+                string += str(self.print_symbol * self.__width) + "\n"
+            return string[:-1]
+
+    def __repr__(self):
+        """ string reoresentation of a rectangle """
+        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
+
+    def __del__(self):
+        """ print message and delete the instance """
+        Rectangle.number_of_instances -= 1
+        return print("Bye rectangle...")
+
     def bigger_or_equal(rect_1, rect_2):
         """ returns the bigger rectangle or if both are equal"""
         if (not isinstance(rect_1, Rectangle) or not isinstance(rect_2,
@@ -66,23 +84,4 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         """ return a square of length x width both """
-        return cls(size, size)
-
-    def __str__(self):
-        """ string representation of a rectangle with print symbol"""
-        string = ''
-
-        if self.__width != 0 or self.__height != 0:
-            for i in range(self.__height):
-                string += str(self.print_symbol * self.__width) + "\n"
-            return string[:-1]
-
-        return print("Bye rectangle...")
-
-    def __repr__(self):
-        """ string reoresentation of a rectangle """
-        return "Rectangle({:d}, {:d})".format(self.__width, self.__height)
-
-    def __del__(self):
-        """ print message and delete the instance """
-        Rectangle.number_of_instances -= 1
+        return Rectangle(size, size)
