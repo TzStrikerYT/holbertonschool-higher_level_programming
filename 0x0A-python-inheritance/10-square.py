@@ -18,7 +18,7 @@ class Rectangle(BaseGeometry):
 
     def __str__(self):
         """ prints a holberton check format """
-        return "[{}] {:d}/{:d}".format(__class__.__name__, self.__width,
+        return "[{}] {:d}/{:d}".format("Rectangle", self.__width,
                                        self.__height)
 
 
