@@ -2,6 +2,7 @@
 
 Rectangle = __import__("9-rectangle").Rectangle
 
+
 class Square(Rectangle):
     """ class that inherit rectangle class """
     def __init__(self, size):
