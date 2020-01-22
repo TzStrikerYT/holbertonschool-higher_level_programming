@@ -3,7 +3,7 @@ def pascal_triangle(n):
     p_list = []
 
     if n <= 0:
-        return pascal_list
+        return p_list
 
     for i in range(n):
         for j in range(i + 1):
