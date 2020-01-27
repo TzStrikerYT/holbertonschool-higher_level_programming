@@ -8,10 +8,10 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """ init attributes for rectangle class """
         super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        self.__width = width
+        self.__height = height
+        self.__x = x
+        self.__y = y
 
     @property
     def width(self):
@@ -70,18 +70,18 @@ class Rectangle(Base):
 
     def area(self):
         """ area of rectangle """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def display(self):
         """ Displays rectangle visual representation """
         final = "\n" * self.y + \
-                (" " * self.x + "#" * self.width + "\n") * self.height
+                (" " * self.x + "#" * self.__width + "\n") * self.__height
         print(final, end="")
 
     def __str__(self):
         """ Returns info of the rectangle """
         return "[{}] ({}) {}/{} - {}/{}".\
-            format(__class__.__name__, self.id, self.x, self.y, self.width,
+            format(__class__.__name__, self.id, self.__x, self.__y, self.__width,
                    self.height)
 
     def updater(self, id=None, width=None, height=None, x=None, y=None):
@@ -107,7 +107,7 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ encode to JSON """
         return {"id": self.id,
-                "width": self.width,
-                "height": self.height,
-                "x": self.x,
-                "y": self.y}
+                "width": self.__width,
+                "height": self.__height,
+                "x": self.__x,
+                "y": self.__y}
