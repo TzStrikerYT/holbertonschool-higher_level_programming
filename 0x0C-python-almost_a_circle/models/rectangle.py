@@ -81,8 +81,8 @@ class Rectangle(Base):
     def __str__(self):
         """ Returns info of the rectangle """
         return "[{}] ({}) {}/{} - {}/{}".\
-            format(__class__.__name__, self.id, self.__x, self.__y, self.__width,
-                   self.height)
+            format(__class__.__name__, self.id, self.__x, self.__y,
+                   self.__width, self.height)
 
     def updater(self, id=None, width=None, height=None, x=None, y=None):
         """ updates instance attribites from */**args """
