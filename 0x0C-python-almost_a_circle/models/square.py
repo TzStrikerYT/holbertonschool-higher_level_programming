@@ -42,6 +42,7 @@ class Square(Rectangle):
             self.updater(**kwargs)
 
     def to_dictionary(self):
+        """ encode to JSON """
         return {"id": self.id,
                 "size": self.width,
                 "x": self.x,

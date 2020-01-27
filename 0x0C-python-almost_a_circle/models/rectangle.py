@@ -61,7 +61,7 @@ class Rectangle(Base):
         """ validates if integer value or not and validates 0 values """
         if type(value) != int:
             raise TypeError("{} must be an integer".format(name))
-        if xy and value < 0 :
+        if xy and value < 0:
             """ x and y validator """
             raise ValueError("{} must be >= 0".format(name))
         if not xy and value <= 0:
@@ -105,6 +105,7 @@ class Rectangle(Base):
             self.updater(**kwargs)
 
     def to_dictionary(self):
+        """ encode to JSON """
         return {"id": self.id,
                 "width": self.width,
                 "height": self.height,
