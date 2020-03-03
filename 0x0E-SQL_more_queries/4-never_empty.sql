@@ -1,5 +1,5 @@
--- id never null
-CREATE TABLE IF NOT EXISTS force_name (
+x-- id never null
+CREATE TABLE IF NOT EXISTS id_not_null (
        id INT DEFAULT 1,
        name VARCHAR(256)
 );
