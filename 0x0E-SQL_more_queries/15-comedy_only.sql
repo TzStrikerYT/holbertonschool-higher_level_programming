@@ -1,6 +1,6 @@
 -- only comedy cado :V
-SELECT show.title FROM tv_genres genre, tv_show_genres tv, tv_shows show 
-WHERE genre.id = tv.genre_id 
-      AND tv.show_id = show.id 
-      AND genre.name = "Comedy"
-ORDER BY show.title ASC;
+SELECT s.title FROM tv_genres g, tv_show_genres t, tv_shows s
+WHERE g.id = t.genre_id
+      AND t.show_id = s.id
+      AND g.name = "Comedy"
+ORDER BY s.title ASC;
