@@ -1,3 +1,7 @@
---CREATES A USER
-CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
-GRANT ALL PRIVILEGES ON * . * TO 'user_0d_1'@'localhost';
+-- Creates user	test
+-- create user test
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';	
+-- privileges test
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+-- flush test
+FLUSH PRIVILEGES;
