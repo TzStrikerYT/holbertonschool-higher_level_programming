@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" List all states order by id"""
+""" List all states order by id """
 
 from sys import argv
 from model_state import Base, State
