@@ -16,7 +16,7 @@ if __name__ == "__main__":
     session = Session()
 
     """ Select * from state where id=1 """
-    new = State(name = "Louisiana")
+    new = State(name="Louisiana")
     session.add(new)
     session.commit()
     print(new.id)
