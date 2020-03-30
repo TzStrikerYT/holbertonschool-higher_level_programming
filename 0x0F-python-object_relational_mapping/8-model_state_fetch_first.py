@@ -16,7 +16,7 @@ if __name__ == "__main__":
     session = Session()
 
     """ Select * from state where id=1 """
-    state = session.query(State).order_by(State.id).first():
+    state = session.query(State).order_by(State.id).first()
     if state:
         print("{}: {}".format(state.id, state.name))
     else:
