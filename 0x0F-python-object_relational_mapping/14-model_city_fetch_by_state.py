@@ -18,7 +18,7 @@ if __name__ == "__main__":
 
     """ Select * from state order by state.id ASC """
     q = session.query(City, State).filter(City.state_id == State.id).all()
-    for state, city in q:
+    for city, state in q:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
     session.commit()
     session.close()
