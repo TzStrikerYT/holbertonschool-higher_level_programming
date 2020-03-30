@@ -15,8 +15,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new = State(name="Lousiana")
+    """ Select * from state where id=1 """
+    new = State(name = "Louisiana")
     session.add(new)
     session.commit()
-    print(new.id)
+    print(new_state.id)
     session.close()
