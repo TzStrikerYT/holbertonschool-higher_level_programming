@@ -1,3 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 #Displays size of the body
 curl -sI "$1" | grep Content-Length | cut -d' ' -f2
