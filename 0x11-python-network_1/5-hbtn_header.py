@@ -2,7 +2,7 @@
 """ Displays de headers """
 if __name__ == "__main__":
     import requests
-    import sys
+    from sys import argv
 
-    request = requests.get(sys.argv[1])
-    print(request.headers["X-Request-Id"])
+    request = requests.get(argv[1])
+    print("{}".format(request.headers.get("X-Request-Id")))
