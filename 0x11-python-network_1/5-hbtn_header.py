@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ Displays de headers """
 if __name__ == "__main__":
-    import urllib.request
+    import requests
     from sys import argv
 
     with urllib.request.urlopen(argv[1]) as response:

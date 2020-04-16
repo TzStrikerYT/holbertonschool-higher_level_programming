@@ -6,7 +6,6 @@ if __name__ == "__main__":
     import urllib.parse
     from sys import argv
 
-
     email = {"email": argv[2]}
     data = urllib.parse.urlencode(email)
     data = data.encode("ascii")
