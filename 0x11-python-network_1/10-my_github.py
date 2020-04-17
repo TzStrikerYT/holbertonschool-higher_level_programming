@@ -9,6 +9,6 @@ if __name__ == "__main__":
     passwd = argv[2]
 
     request = requests.get(
-        "https://api.github.com", auth=HTTPBasicAuth(user, passwd))
+        "https://api.github.com/user", auth=HTTPBasicAuth(user, passwd))
     json = request.json()
     print("{}".format(json.get("id")))
