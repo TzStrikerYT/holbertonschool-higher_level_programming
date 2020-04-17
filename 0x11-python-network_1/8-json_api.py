@@ -3,7 +3,6 @@ if __name__ == "__main__":
     import requests
     from sys import argv
 
-
     js = {"q": argv[1]} if len(argv[1]) == 1 else {"q": ""}
 
     try:
