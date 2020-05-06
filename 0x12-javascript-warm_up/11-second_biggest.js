@@ -4,5 +4,5 @@ if (process.argv.length <= 3) {
 } else {
   let arg = process.argv.sort();
   arg = arg.reverse()[1];
-  console.log(arg);
+  console.log(parseInt(arg));
 }
